@@ -1,0 +1,904 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Наш Любимый Класс</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Подключаем красивые шрифты -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Dancing+Script:wght@700&family=Great+Vibes&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="aesthetic-title">Наш Любимый 9 Класс</h1>
+      <div class="nav-buttons">
+        <a href="#" class="btn main-btn">Главная</a>
+        <a href="#general-photos" class="btn secondary-btn">Общие Фото</a>
+        <a href="#trips" class="btn secondary-btn">Наши Поездки</a>
+      </div>
+    </header>
+
+    <main class="gallery-container" id="students">
+      <!-- КАРТОЧКА УЧИТЕЛЯ (С ВИДЕО) -->
+      <div class="card teacher-card">
+        <div class="video-container">
+          <!-- Замени 'video.mp4' на свое видео или вставь iframe из YouTube -->
+          <video controls poster="teacher-placeholder.jpg">
+            <source src="your-teacher-video.mp4" type="video/mp4" />
+            Ваш браузер не поддерживает видео.
+          </video>
+        </div>
+        <div class="card-info">
+          <span class="badge">Классный руководитель</span>
+          <h3>Имя Фамилия</h3>
+          <p>"Ваше напутственное слово или девиз класса может быть здесь."</p>
+        </div>
+      </div>
+
+      <!-- КАРТОЧКИ УЧЕНИКОВ (47 штук) -->
+      <!-- Повторяющийся блок для каждого ученика -->
+      <div
+        class="card student-card"
+        data-extra="./фото/доп_айгерим.jpg"
+        data-character="Mulan"
+        data-movie="Disney's Mulan"
+      >
+        <div class="image-wrapper">
+          <img src="./фото/ученик1.jpg" alt="Ученик 1" />
+        </div>
+        <div class="card-info">
+          <h3>Сатыбалдиева Айгерим</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/доп_тимур.jpg"
+        data-character="Li Shang"
+        data-movie="Disney's Mulan"
+      >
+        <div class="image-wrapper">
+          <img src="./фото/ученик2.jpg" alt="Ученик 2" />
+        </div>
+        <div class="card-info">
+          <h3>Осмоналиев Тимур</h3>
+          <p>Настоящему воину меч не нужен</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/доп_медина.jpg"
+        data-character="Rapunzel"
+        data-movie="Tangled"
+      >
+        <div class="image-wrapper">
+          <img src="./фото/IMG_3400.PNG" alt="Ученик 3" />
+        </div>
+        <div class="card-info">
+          <h3>Кудайбергенова Медина</h3>
+          <p>May we meet again</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/доп_ибрахим.jpg"
+        data-character="Simba"
+        data-movie="The Lion King"
+      >
+        <div class="image-wrapper">
+          <img src="./фото/ученик4.jpg" alt="Ученик 4" />
+        </div>
+        <div class="card-info">
+          <h3>Майлиев Ибрахим</h3>
+          <p>Никогда не ошибается тот, кто ничего не делает.</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж5.jpg"
+        data-character="Belle"
+        data-movie="Beauty and the Beast"
+      >
+        <div class="image-wrapper">
+          <img src="./фото/ученик5.jpg" alt="Ученик 5" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 5</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж6.jpg"
+        data-character="Alice"
+        data-movie="Alice in Wonderland"
+      >
+        <div class="image-wrapper">
+          <img src="./фото/ученик6.jpg" alt="Ученик 6" />
+        </div>
+        <div class="card-info">
+          <h3>Соодомбаева Нуркыз</h3>
+          <p>ОСД, 2 сезон, 5 серия, 35:08</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж7.jpg"
+        data-character="Moana"
+        data-movie="Moana"
+      >
+        <div class="image-wrapper">
+          <img src="photo7.jpg" alt="Ученик 7" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 7</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж8.jpg"
+        data-character="Cinderella"
+        data-movie="Cinderella"
+      >
+        <div class="image-wrapper">
+          <img src="./фото/ученик8.jpg" alt="Ученик 8" />
+        </div>
+        <div class="card-info">
+          <h3>Болотбекова Бегимай</h3>
+          <p>service above self💙</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж9.jpg"
+        data-character="Hercules"
+        data-movie="Hercules"
+      >
+        <div class="image-wrapper">
+          <img src="photo9.jpg" alt="Ученик 9" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 9</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж10.jpg"
+        data-character="Megara"
+        data-movie="Hercules"
+      >
+        <div class="image-wrapper">
+          <img src="photo10.jpg" alt="Ученик 10" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 10</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж11.jpg"
+        data-character="Flynn Rider"
+        data-movie="Tangled"
+      >
+        <div class="image-wrapper">
+          <img src="photo11.jpg" alt="Ученик 11" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 11</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж12.jpg"
+        data-character="Elsa"
+        data-movie="Frozen"
+      >
+        <div class="image-wrapper">
+          <img src="photo12.jpg" alt="Ученик 12" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 12</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж13.jpg"
+        data-character="Anna"
+        data-movie="Frozen"
+      >
+        <div class="image-wrapper">
+          <img src="photo13.jpg" alt="Ученик 13" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 13</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж14.jpg"
+        data-character="Kristoff"
+        data-movie="Frozen"
+      >
+        <div class="image-wrapper">
+          <img src="photo14.jpg" alt="Ученик 14" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 14</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж15.jpg"
+        data-character="Tarzan"
+        data-movie="Tarzan"
+      >
+        <div class="image-wrapper">
+          <img src="photo15.jpg" alt="Ученик 15" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 15</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж16.jpg"
+        data-character="Jane"
+        data-movie="Tarzan"
+      >
+        <div class="image-wrapper">
+          <img src="photo16.jpg" alt="Ученик 16" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 16</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж17.jpg"
+        data-character="Peter Pan"
+        data-movie="Peter Pan"
+      >
+        <div class="image-wrapper">
+          <img src="photo17.jpg" alt="Ученик 17" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 17</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж18.jpg"
+        data-character="Wendy"
+        data-movie="Peter Pan"
+      >
+        <div class="image-wrapper">
+          <img src="photo18.jpg" alt="Ученик 18" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 18</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж19.jpg"
+        data-character="Aurora"
+        data-movie="Sleeping Beauty"
+      >
+        <div class="image-wrapper">
+          <img src="photo19.jpg" alt="Ученик 19" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 19</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж20.jpg"
+        data-character="Prince Phillip"
+        data-movie="Sleeping Beauty"
+      >
+        <div class="image-wrapper">
+          <img src="photo20.jpg" alt="Ученик 20" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 20</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж21.jpg"
+        data-character="Snow White"
+        data-movie="Snow White"
+      >
+        <div class="image-wrapper">
+          <img src="photo21.jpg" alt="Ученик 21" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 21</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж22.jpg"
+        data-character="Prince Charming"
+        data-movie="Cinderella"
+      >
+        <div class="image-wrapper">
+          <img src="photo22.jpg" alt="Ученик 22" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 22</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж23.jpg"
+        data-character="Pocahontas"
+        data-movie="Pocahontas"
+      >
+        <div class="image-wrapper">
+          <img src="photo23.jpg" alt="Ученик 23" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 23</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж24.jpg"
+        data-character="John Smith"
+        data-movie="Pocahontas"
+      >
+        <div class="image-wrapper">
+          <img src="photo24.jpg" alt="Ученик 24" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 24</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж25.jpg"
+        data-character="Tiana"
+        data-movie="The Princess and the Frog"
+      >
+        <div class="image-wrapper">
+          <img src="photo25.jpg" alt="Ученик 25" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 25</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж26.jpg"
+        data-character="Prince Naveen"
+        data-movie="The Princess and the Frog"
+      >
+        <div class="image-wrapper">
+          <img src="photo26.jpg" alt="Ученик 26" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 26</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж27.jpg"
+        data-character="Aladdin"
+        data-movie="Aladdin"
+      >
+        <div class="image-wrapper">
+          <img src="photo27.jpg" alt="Ученик 27" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 27</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж28.jpg"
+        data-character="Jasmine"
+        data-movie="Aladdin"
+      >
+        <div class="image-wrapper">
+          <img src="photo28.jpg" alt="Ученик 28" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 28</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж29.jpg"
+        data-character="Ariel"
+        data-movie="The Little Mermaid"
+      >
+        <div class="image-wrapper">
+          <img src="photo29.jpg" alt="Ученик 29" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 29</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж30.jpg"
+        data-character="Prince Eric"
+        data-movie="The Little Mermaid"
+      >
+        <div class="image-wrapper">
+          <img src="photo30.jpg" alt="Ученик 30" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 30</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж31.jpg"
+        data-character="Lilo"
+        data-movie="Lilo & Stitch"
+      >
+        <div class="image-wrapper">
+          <img src="photo31.jpg" alt="Ученик 31" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 31</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж32.jpg"
+        data-character="Stitch"
+        data-movie="Lilo & Stitch"
+      >
+        <div class="image-wrapper">
+          <img src="photo32.jpg" alt="Ученик 32" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 32</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж33.jpg"
+        data-character="Woody"
+        data-movie="Toy Story"
+      >
+        <div class="image-wrapper">
+          <img src="photo33.jpg" alt="Ученик 33" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 33</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж34.jpg"
+        data-character="Buzz Lightyear"
+        data-movie="Toy Story"
+      >
+        <div class="image-wrapper">
+          <img src="photo34.jpg" alt="Ученик 34" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 34</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж35.jpg"
+        data-character="Jessie"
+        data-movie="Toy Story"
+      >
+        <div class="image-wrapper">
+          <img src="photo35.jpg" alt="Ученик 35" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 35</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж36.jpg"
+        data-character="Mike Wazowski"
+        data-movie="Monsters, Inc."
+      >
+        <div class="image-wrapper">
+          <img src="photo36.jpg" alt="Ученик 36" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 36</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж37.jpg"
+        data-character="Sully"
+        data-movie="Monsters, Inc."
+      >
+        <div class="image-wrapper">
+          <img src="photo37.jpg" alt="Ученик 37" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 37</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж38.jpg"
+        data-character="Boo"
+        data-movie="Monsters, Inc."
+      >
+        <div class="image-wrapper">
+          <img src="photo38.jpg" alt="Ученик 38" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 38</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж39.jpg"
+        data-character="Lightning McQueen"
+        data-movie="Cars"
+      >
+        <div class="image-wrapper">
+          <img src="photo39.jpg" alt="Ученик 39" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 39</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж40.jpg"
+        data-character="Mater"
+        data-movie="Cars"
+      >
+        <div class="image-wrapper">
+          <img src="photo40.jpg" alt="Ученик 40" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 40</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж41.jpg"
+        data-character="Joy"
+        data-movie="Inside Out"
+      >
+        <div class="image-wrapper">
+          <img src="photo41.jpg" alt="Ученик 41" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 41</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж42.jpg"
+        data-character="Sadness"
+        data-movie="Inside Out"
+      >
+        <div class="image-wrapper">
+          <img src="photo42.jpg" alt="Ученик 42" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 42</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж43.jpg"
+        data-character="Disgust"
+        data-movie="Inside Out"
+      >
+        <div class="image-wrapper">
+          <img src="photo43.jpg" alt="Ученик 43" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 43</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж44.jpg"
+        data-character="Anger"
+        data-movie="Inside Out"
+      >
+        <div class="image-wrapper">
+          <img src="photo44.jpg" alt="Ученик 44" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 44</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж45.jpg"
+        data-character="Fear"
+        data-movie="Inside Out"
+      >
+        <div class="image-wrapper">
+          <img src="photo45.jpg" alt="Ученик 45" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 45</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж46.jpg"
+        data-character="Baymax"
+        data-movie="Big Hero 6"
+      >
+        <div class="image-wrapper">
+          <img src="photo46.jpg" alt="Ученик 46" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 46</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+      <div
+        class="card student-card"
+        data-extra="./фото/персонаж47.jpg"
+        data-character="Hiro"
+        data-movie="Big Hero 6"
+      >
+        <div class="image-wrapper">
+          <img src="photo47.jpg" alt="Ученик 47" />
+        </div>
+        <div class="card-info">
+          <h3>Ученик 47</h3>
+          <p>Твое описание</p>
+          <button class="card-btn">Инфо</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- НОВЫЙ РАЗДЕЛ: ОБЩИЕ ФОТО -->
+    <h2 class="section-title" id="general-photos">Наши Общие Фото</h2>
+    <div class="gallery-container">
+      <div class="card">
+        <div class="image-wrapper">
+          <img src="all1.jpg" alt="Общее фото 1" />
+        </div>
+      </div>
+      <div class="card">
+        <div class="image-wrapper">
+          <img src="all2.jpg" alt="Общее фото 2" />
+        </div>
+      </div>
+      <div class="card">
+        <div class="image-wrapper">
+          <img src="all3.jpg" alt="Общее фото 3" />
+        </div>
+      </div>
+    </div>
+
+    <!-- НОВЫЙ РАЗДЕЛ: ПОЕЗДКИ -->
+    <h2 class="section-title" id="trips">Наши Поездки</h2>
+    <div class="gallery-container">
+      <div class="card">
+        <div class="image-wrapper"><img src="trip1.jpg" alt="Поездка 1" /></div>
+        <div class="card-info"><h3>Экскурсия в горы</h3></div>
+      </div>
+      <div class="card">
+        <div class="image-wrapper"><img src="trip2.jpg" alt="Поездка 2" /></div>
+        <div class="card-info"><h3>Поход в музей</h3></div>
+      </div>
+      <div class="card">
+        <div class="image-wrapper"><img src="trip3.jpg" alt="Поездка 3" /></div>
+        <div class="card-info"><h3>Выпускной вечер</h3></div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>&copy; 2026 Наш Любимый Класс. Сделано с любовью.</p>
+    </footer>
+
+    <!-- Модальное окно для полноэкранного просмотра -->
+    <div id="imageModal" class="modal">
+      <img class="modal-content" id="fullImage" />
+    </div>
+
+    <!-- Модальное окно для информации -->
+    <div id="infoModal" class="modal">
+      <div class="modal-info-content">
+        <div class="modal-images-row">
+          <div class="info-card-wrap">
+            <img id="infoMainImg" class="modal-info-img" src="" alt="Ученик" />
+            <h2
+              id="infoName"
+              style="margin: 20px 0 10px; font-size: 1.5rem"
+            ></h2>
+          </div>
+          <div class="info-card-wrap" id="charCardWrap">
+            <img
+              id="infoExtraImg"
+              class="modal-info-img"
+              src=""
+              alt="Персонаж"
+            />
+            <h3 id="infoCharName" style="margin-top: 15px"></h3>
+            <p
+              id="infoMovie"
+              style="
+                opacity: 0.8;
+                text-transform: uppercase;
+                font-size: 0.8rem;
+                letter-spacing: 1px;
+              "
+            ></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Скрипт для плавного появления карточек при прокрутке
+      const observerOptions = { threshold: 0.1 };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".card").forEach((card) => {
+        card.style.opacity = "0";
+        card.style.transform = "translateY(50px)";
+        card.style.transition = "all 0.6s ease-out";
+        observer.observe(card);
+      });
+
+      // Логика открытия фото на весь экран
+      const modal = document.getElementById("imageModal");
+      const fullImg = document.getElementById("fullImage");
+
+      document.querySelectorAll(".image-wrapper img").forEach((img) => {
+        img.addEventListener("click", () => {
+          modal.style.display = "flex";
+          fullImg.src = img.src;
+        });
+      });
+
+      modal.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
+
+      // Логика открытия информации
+      const infoModal = document.getElementById("infoModal");
+      const infoName = document.getElementById("infoName");
+      const infoMainImg = document.getElementById("infoMainImg");
+      const infoExtraImg = document.getElementById("infoExtraImg");
+      const infoCharName = document.getElementById("infoCharName");
+      const infoMovie = document.getElementById("infoMovie");
+      const charCardWrap = document.getElementById("charCardWrap");
+
+      document.querySelectorAll(".card-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation(); // Чтобы не срабатывало открытие картинки, если нажать на кнопку
+          const card = btn.closest(".card");
+          const name = card.querySelector("h3").innerText;
+          const description = card.querySelector("p").innerText;
+          const mainSrc = card.querySelector("img").src;
+          const extraSrc = card.getAttribute("data-extra");
+          const charName = card.getAttribute("data-character") || "Character";
+          const movieTitle = card.getAttribute("data-movie") || "Movie Title";
+
+          infoName.innerText = name;
+          infoCharName.innerText = charName;
+          infoMovie.innerText = movieTitle;
+          infoMainImg.src = mainSrc;
+
+          if (extraSrc) {
+            infoExtraImg.src = extraSrc;
+            charCardWrap.style.display = "flex";
+          } else {
+            charCardWrap.style.display = "none";
+          }
+
+          infoModal.style.display = "flex";
+        });
+      });
+
+      infoModal.addEventListener("click", () => {
+        infoModal.style.display = "none";
+      });
+    </script>
+  </body>
+</html>

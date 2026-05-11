@@ -1,0 +1,242 @@
+/* Общие настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Шапка */
+.header {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.header h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+/* Кнопки */
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.main-btn {
+    background: #ff7e5f;
+    color: white;
+}
+
+.secondary-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Сетка карточек */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Общий стиль карточки */
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* Специальная карточка учителя */
+.teacher-card {
+    grid-column: 1 / -1; /* Растягиваем на всю ширину для акцента */
+    flex-direction: row;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .teacher-card { flex-direction: column; }
+}
+
+.video-container {
+    flex: 1;
+    max-width: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Фото учеников */
+.image-wrapper {
+    height: 300px;
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.card:hover .image-wrapper img {
+    transform: scale(1.1);
+}
+
+/* Инфо внутри карточки */
+.card-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.badge {
+    background: #feb47b;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.card-btn {
+    margin-top: 15px;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card-btn:hover {
+    background: #fff;
+    color: #764ba2;
+}
+
+.footer {
+    text-align: center;
+    padding: 50px;
+    opacity: 0.8;
+}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наш Любимый Класс</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключаем красивые шрифты -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Альбом 11-"А" Класса</h1>
+        <div class="nav-buttons">
+            <button class="btn main-btn">Главная</button>
+            <button class="btn secondary-btn">Общие Фото</button>
+            <button class="btn secondary-btn">Наши Поездки</button>
+        </div>
+    </header>
+
+    <main class="gallery-container">
+        
+        <!-- КАРТОЧКА УЧИТЕЛЯ (С ВИДЕО) -->
+        <div class="card teacher-card">
+            <div class="video-container">
+                <!-- Замени 'video.mp4' на свое видео или вставь iframe из YouTube -->
+                <video controls poster="teacher-placeholder.jpg">
+                    <source src="your-teacher-video.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+            </div>
+            <div class="card-info">
+                <span class="badge">Классный руководитель</span>
+                <h3>Имя Фамилия</h3>
+                <p>"Ваше напутственное слово или девиз класса может быть здесь."</p>
+            </div>
+        </div>
+
+        <!-- КАРТОЧКИ УЧЕНИКОВ (Скопируй этот блок до 47 штук) -->
+        <!-- Карточка 1 -->
+        <div class="card student-card">
+            <div class="image-wrapper">
+                <img src="student1.jpg" alt="Ученик">
+            </div>
+            <div class="card-info">
+                <h3>Имя Ученика</h3>
+                <p>Мечтает стать врачом</p>
+                <button class="card-btn">Профиль</button>
+            </div>
+        </div>
+
+        <!-- Карточка 2 -->
+        <div class="card student-card">
+            <div class="image-wrapper">
+                <img src="student2.jpg" alt="Ученик">
+            </div>
+            <div class="card-info">
+                <h3>Имя Ученика</h3>
+                <p>Будущий программист</p>
+                <button class="card-btn">Профиль</button>
+            </div>
+        </div>
+
+        <!-- ... ТЕБЕ НУЖНО СКОПИРОВАТЬ БЛОК ВЫШЕ ЕЩЕ 45 РАЗ ... -->
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2023 Наш Класс. Сделано с любовью.</p>
+    </footer>
+
+</body>
+</html>

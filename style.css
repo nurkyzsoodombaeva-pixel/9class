@@ -18,6 +18,11 @@ body {
   scroll-behavior: smooth;
 }
 
+/* Класс для блокировки скролла */
+.no-scroll {
+  overflow: hidden;
+}
+
 /* Шапка */
 .header {
   text-align: center;

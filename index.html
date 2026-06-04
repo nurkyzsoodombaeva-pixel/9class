@@ -48,7 +48,11 @@
         <button
           id="guestBtn"
           class="btn secondary-btn"
-          style="width: 100%; margin-top: 10px; background: rgba(255,255,255,0.1)"
+          style="
+            width: 100%;
+            margin-top: 10px;
+            background: rgba(255, 255, 255, 0.1);
+          "
         >
           Войти как гость
         </button>
@@ -1045,7 +1049,7 @@
           letter: document.getElementById("authLetter").value,
           lastName: document.getElementById("authLastName").value,
           firstName: document.getElementById("authFirstName").value,
-          isGuest: true
+          isGuest: true,
         };
 
         if (!userData.lastName || !userData.firstName) {
@@ -1054,7 +1058,9 @@
 
         currentUser = userData;
         authOverlay.style.display = "none";
-        alert(`Вы вошли как гость: ${currentUser.firstName}. Просмотр разрешен.`);
+        alert(
+          `Вы вошли как гость: ${currentUser.firstName}. Просмотр разрешен.`,
+        );
       });
 
       function renderNewCard(user) {
@@ -1174,32 +1180,39 @@
 
       // Функция обновления оранжевых кружков (как в WhatsApp)
       function updateCommentBadges() {
-        const latestComments = JSON.parse(localStorage.getItem("school_comments")) || [];
+        const latestComments =
+          JSON.parse(localStorage.getItem("school_comments")) || [];
         const cards = document.querySelectorAll(".student-card");
 
         cards.forEach((card) => {
           const name = card.querySelector("h3").innerText;
           const count = latestComments.filter((c) => c.target === name).length;
-          
+
           // Ищем кнопку комментариев в этой карточке
           const buttons = card.querySelectorAll(".card-btn");
           let commBtn = null;
-          buttons.forEach(b => { if(b.innerText.includes("Комментарии")) commBtn = b; });
+          buttons.forEach((b) => {
+            if (b.innerText.includes("Комментарии")) commBtn = b;
+          });
 
           if (commBtn) {
             // Оборачиваем кнопку в wrapper, если её там еще нет
-            if (!commBtn.parentElement.classList.contains("comment-btn-wrapper")) {
+            if (
+              !commBtn.parentElement.classList.contains("comment-btn-wrapper")
+            ) {
               const wrapper = document.createElement("div");
               wrapper.className = "comment-btn-wrapper";
               commBtn.parentNode.insertBefore(wrapper, commBtn);
               wrapper.appendChild(commBtn);
-              
+
               const badge = document.createElement("div");
               badge.className = "comment-count-badge";
               wrapper.appendChild(badge);
             }
 
-            const badge = commBtn.parentElement.querySelector(".comment-count-badge");
+            const badge = commBtn.parentElement.querySelector(
+              ".comment-count-badge",
+            );
             if (count > 0) {
               badge.innerText = count;
               badge.style.display = "flex";

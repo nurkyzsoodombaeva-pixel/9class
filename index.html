@@ -11,6 +11,76 @@
     />
   </head>
   <body>
+    <!-- Окно авторизации -->
+    <div id="authOverlay" class="auth-overlay">
+      <div class="auth-form">
+        <h2>Добро пожаловать</h2>
+        <p style="font-size: 0.8rem; margin-bottom: 15px">
+          Введите данные, чтобы войти в альбом
+        </p>
+        <input
+          type="text"
+          id="authClass"
+          placeholder="Класс (например: 9)"
+          required
+        />
+        <input
+          type="text"
+          id="authLetter"
+          placeholder="Буква (например: А)"
+          required
+        />
+        <input type="text" id="authLastName" placeholder="Фамилия" required />
+        <input type="text" id="authFirstName" placeholder="Имя" required />
+        <input
+          type="password"
+          id="authPass"
+          placeholder="Придумайте пароль"
+          required
+        />
+        <button
+          id="loginBtn"
+          class="btn main-btn"
+          style="width: 100%; margin-top: 10px"
+        >
+          Войти / Регистрация
+        </button>
+        <button
+          id="guestBtn"
+          class="btn secondary-btn"
+          style="width: 100%; margin-top: 10px; background: rgba(255,255,255,0.1)"
+        >
+          Войти как гость
+        </button>
+      </div>
+    </div>
+
+    <!-- Панель Администратора (скрытая) -->
+    <div id="adminPanel" class="admin-panel">
+      <h3>Панель Разработчика</h3>
+      <hr />
+      <div id="adminContent">
+        <h4>Пользователи и Пароли:</h4>
+        <ul
+          id="adminUserList"
+          style="font-size: 0.7rem; list-style: none; padding: 0"
+        ></ul>
+        <h4 style="margin-top: 10px">Все комментарии (авторы):</h4>
+        <ul
+          id="adminCommentList"
+          style="font-size: 0.7rem; list-style: none; padding: 0"
+        ></ul>
+      </div>
+      <button
+        onclick="document.getElementById('adminPanel').style.display = 'none'"
+        class="card-btn"
+      >
+        Закрыть
+      </button>
+    </div>
+
+    <!-- Скрытая кнопка для админа (нажать 5 раз на футер) -->
+
     <header class="header">
       <h1 class="aesthetic-title">9th Grade Memories</h1>
       <div class="nav-buttons">
@@ -35,7 +105,6 @@
         </div>
       </div>
 
-      
       <div
         class="card student-card"
         data-extra="https://i.pinimg.com/736x/5f/6e/45/5f6e45159a9a7df541d3467caa3f6287.jpg"
@@ -47,8 +116,11 @@
         </div>
         <div class="card-info">
           <h3>Сатыбалдиева Айгерим</h3>
-          <p> عسى المكتوب أجمل من المرغوب.</p>
+          <p>عسى المكتوب أجمل من المرغوب.</p>
           <button class="card-btn">Инфо</button>
+          <button class="card-btn" style="background: #5f79ff">
+            Комментарии
+          </button>
         </div>
       </div>
       <div
@@ -64,6 +136,9 @@
           <h3>Осмоналиев Тимур</h3>
           <p>Настоящему воину меч не нужен</p>
           <button class="card-btn">Инфо</button>
+          <button class="card-btn" style="background: #5f79ff">
+            Комментарии
+          </button>
         </div>
       </div>
       <div
@@ -79,6 +154,9 @@
           <h3>Кудайбергенова Медина</h3>
           <p>May we meet again</p>
           <button class="card-btn">Инфо</button>
+          <button class="card-btn" style="background: #5f79ff">
+            Комментарии
+          </button>
         </div>
       </div>
       <div
@@ -94,6 +172,9 @@
           <h3>Майлиев Ибрахим</h3>
           <p>Никогда не ошибается тот, кто ничего не делает.</p>
           <button class="card-btn">Инфо</button>
+          <button class="card-btn" style="background: #5f79ff">
+            Комментарии
+          </button>
         </div>
       </div>
       <!-- <div
@@ -124,6 +205,9 @@
           <h3>Соодомбаева Нуркыз</h3>
           <p>ОСД, 2 сезон, 5 серия, 35:08</p>
           <button class="card-btn">Инфо</button>
+          <button class="card-btn" style="background: #5f79ff">
+            Комментарии
+          </button>
         </div>
       </div>
       <div
@@ -139,6 +223,9 @@
           <h3>Эдильбеков Эдиль</h3>
           <p>ыаллыылар</p>
           <button class="card-btn">Инфо</button>
+          <button class="card-btn" style="background: #5f79ff">
+            Комментарии
+          </button>
         </div>
       </div>
       <div
@@ -154,6 +241,9 @@
           <h3>Болотбекова Бегимай</h3>
           <p>service above self💙</p>
           <button class="card-btn">Инфо</button>
+          <button class="card-btn" style="background: #5f79ff">
+            Комментарии
+          </button>
         </div>
       </div>
       <div
@@ -169,6 +259,9 @@
           <h3>Сегизбеков Амир</h3>
           <p>Твое описание</p>
           <button class="card-btn">Инфо</button>
+          <button class="card-btn" style="background: #5f79ff">
+            Комментарии
+          </button>
         </div>
       </div>
       <div
@@ -184,6 +277,9 @@
           <h3>Талантбекова Тумар</h3>
           <p>choose peace</p>
           <button class="card-btn">Инфо</button>
+          <button class="card-btn" style="background: #5f79ff">
+            Комментарии
+          </button>
         </div>
       </div>
       <div
@@ -199,6 +295,9 @@
           <h3>Тазабеков Жоодар</h3>
           <p>if you lose , lose like Max Verstrappen in 2025</p>
           <button class="card-btn">Инфо</button>
+          <button class="card-btn" style="background: #5f79ff">
+            Комментарии
+          </button>
         </div>
       </div>
       <div
@@ -212,9 +311,11 @@
         </div>
         <div class="card-info">
           <h3>Гульбахче Ясмина</h3>
-          <p>a negative mind will never 
-give you a positive life</p>
+          <p>a negative mind will never give you a positive life</p>
           <button class="card-btn">Инфо</button>
+          <button class="card-btn" style="background: #5f79ff">
+            Комментарии
+          </button>
         </div>
       </div>
       <div
@@ -230,6 +331,9 @@ give you a positive life</p>
           <h3>Рустамбеков Нурсултан</h3>
           <p>#937</p>
           <button class="card-btn">Инфо</button>
+          <button class="card-btn" style="background: #5f79ff">
+            Комментарии
+          </button>
         </div>
       </div>
       <div
@@ -245,6 +349,9 @@ give you a positive life</p>
           <h3>Кубанычбекова Амира</h3>
           <p>We were born to die</p>
           <button class="card-btn">Инфо</button>
+          <button class="card-btn" style="background: #5f79ff">
+            Комментарии
+          </button>
         </div>
       </div>
       <div
@@ -260,6 +367,9 @@ give you a positive life</p>
           <h3>Светачев Рауль</h3>
           <p>#936</p>
           <button class="card-btn">Инфо</button>
+          <button class="card-btn" style="background: #5f79ff">
+            Комментарии
+          </button>
         </div>
       </div>
       <div
@@ -275,6 +385,9 @@ give you a positive life</p>
           <h3>Керимова Айбике</h3>
           <p>Sevdiğin insanlara asla yalan söylemе</p>
           <button class="card-btn">Инфо</button>
+          <button class="card-btn" style="background: #5f79ff">
+            Комментарии
+          </button>
         </div>
       </div>
       <div
@@ -290,6 +403,9 @@ give you a positive life</p>
           <h3>Кочкоров Исхак</h3>
           <p>Пока со мной мой меч,я точно знаю, что выживу в любой битве</p>
           <button class="card-btn">Инфо</button>
+          <button class="card-btn" style="background: #5f79ff">
+            Комментарии
+          </button>
         </div>
       </div>
       <div
@@ -305,6 +421,9 @@ give you a positive life</p>
           <h3>Рысбекова Акылай</h3>
           <p>иногда мне кажется что белую полосу в моей жизни кто то вынюхал</p>
           <button class="card-btn">Инфо</button>
+          <button class="card-btn" style="background: #5f79ff">
+            Комментарии
+          </button>
         </div>
       </div>
       <div
@@ -320,6 +439,9 @@ give you a positive life</p>
           <h3>Арсалиев Заур</h3>
           <p>сек</p>
           <button class="card-btn">Инфо</button>
+          <button class="card-btn" style="background: #5f79ff">
+            Комментарии
+          </button>
         </div>
       </div>
       <div
@@ -335,6 +457,9 @@ give you a positive life</p>
           <h3>Абдылдаева Аделина</h3>
           <p>Эверест на фоне меня это хуйня</p>
           <button class="card-btn">Инфо</button>
+          <button class="card-btn" style="background: #5f79ff">
+            Комментарии
+          </button>
         </div>
       </div>
       <div
@@ -350,6 +475,9 @@ give you a positive life</p>
           <h3>Бараканов Арслан</h3>
           <p>Я не искал лёгкий путь — я искал свой.</p>
           <button class="card-btn">Инфо</button>
+          <button class="card-btn" style="background: #5f79ff">
+            Комментарии
+          </button>
         </div>
       </div>
       <div
@@ -363,8 +491,14 @@ give you a positive life</p>
         </div>
         <div class="card-info">
           <h3>Анарбекова Ырысжан</h3>
-          <p>всю ценность момента поймешь лишь тогда, когда это станет воспоминанием</p>
+          <p>
+            всю ценность момента поймешь лишь тогда, когда это станет
+            воспоминанием
+          </p>
           <button class="card-btn">Инфо</button>
+          <button class="card-btn" style="background: #5f79ff">
+            Комментарии
+          </button>
         </div>
       </div>
       <div
@@ -380,6 +514,9 @@ give you a positive life</p>
           <h3>Абдыкалыков Нурислам</h3>
           <p>39:53</p>
           <button class="card-btn">Инфо</button>
+          <button class="card-btn" style="background: #5f79ff">
+            Комментарии
+          </button>
         </div>
       </div>
       <div
@@ -393,9 +530,11 @@ give you a positive life</p>
         </div>
         <div class="card-info">
           <h3>Жаныбекова Аделья</h3>
-          <p>Живи без притворства, люби без зависимости. 
-            Drake </p>
+          <p>Живи без притворства, люби без зависимости. Drake</p>
           <button class="card-btn">Инфо</button>
+          <button class="card-btn" style="background: #5f79ff">
+            Комментарии
+          </button>
         </div>
       </div>
       <div
@@ -411,6 +550,9 @@ give you a positive life</p>
           <h3>Ученик 24</h3>
           <p>Твое описание</p>
           <button class="card-btn">Инфо</button>
+          <button class="card-btn" style="background: #5f79ff">
+            Комментарии
+          </button>
         </div>
       </div>
       <div
@@ -426,6 +568,9 @@ give you a positive life</p>
           <h3>Кылычбекова Самира</h3>
           <p>And in that moment, I swear we were infinite</p>
           <button class="card-btn">Инфо</button>
+          <button class="card-btn" style="background: #5f79ff">
+            Комментарии
+          </button>
         </div>
       </div>
       <div
@@ -441,6 +586,9 @@ give you a positive life</p>
           <h3>Ученик 26</h3>
           <p>Твое описание</p>
           <button class="card-btn">Инфо</button>
+          <button class="card-btn" style="background: #5f79ff">
+            Комментарии
+          </button>
         </div>
       </div>
       <div
@@ -456,6 +604,9 @@ give you a positive life</p>
           <h3>Асанбекова Айжамал</h3>
           <p>Твое описание</p>
           <button class="card-btn">Инфо</button>
+          <button class="card-btn" style="background: #5f79ff">
+            Комментарии
+          </button>
         </div>
       </div>
       <div
@@ -471,6 +622,9 @@ give you a positive life</p>
           <h3>Ученик 28</h3>
           <p>Твое описание</p>
           <button class="card-btn">Инфо</button>
+          <button class="card-btn" style="background: #5f79ff">
+            Комментарии
+          </button>
         </div>
       </div>
       <div
@@ -683,8 +837,6 @@ give you a positive life</p>
           <button class="card-btn">Инфо</button>
         </div>
       </div>
-      
-      
     </main>
 
     <!-- НОВЫЙ РАЗДЕЛ: ОБЩИЕ ФОТО -->
@@ -738,8 +890,9 @@ give you a positive life</p>
         <div class="modal-images-row">
           <div class="info-card-wrap">
             <img id="infoMainImg" class="modal-info-img" src="" alt="Ученик" />
+            <!-- Удалили дубликат ID infoName здесь -->
             <h2
-              id="infoName"
+              id="infoTitleName"
               style="margin: 20px 0 10px; font-size: 1.5rem"
             ></h2>
             <div class="polaroid-caption">
@@ -765,11 +918,170 @@ give you a positive life</p>
             ></p>
           </div>
         </div>
+
+        <!-- Секция комментариев -->
+        <div class="comments-section">
+          <h4>Обсуждение</h4>
+          <div
+            id="commentsContainer"
+            style="max-height: 200px; overflow-y: auto; margin: 10px 0"
+          ></div>
+          <div style="display: flex; gap: 10px">
+            <input
+              type="text"
+              id="newCommentInput"
+              placeholder="Написать анонимно..."
+              style="flex: 1; padding: 8px; border-radius: 10px; border: none"
+            />
+            <button
+              id="sendCommentBtn"
+              class="btn main-btn"
+              style="padding: 5px 15px"
+            >
+              📨
+            </button>
+          </div>
+        </div>
+
+        <!-- Секция личных фото (только для владельца карточки) -->
+        <div
+          id="personalPhotosSection"
+          class="photo-upload-zone"
+          style="display: none"
+        >
+          <h4>Твои школьные фото (макс. 50)</h4>
+          <p style="font-size: 0.7rem; opacity: 0.7">
+            На фото должно быть несколько человек!
+          </p>
+          <input
+            type="file"
+            id="photoUploadInput"
+            accept="image/*"
+            multiple
+            style="margin-top: 10px"
+          />
+          <div id="userPhotosGrid" class="user-photos-grid"></div>
+        </div>
       </div>
     </div>
 
     <script>
-      // Скрипт для плавного появления карточек при прокрутке
+      // --- ЛОГИКА АВТОРИЗАЦИИ И ДАННЫХ ---
+      let currentUser = null;
+      let allUsers = JSON.parse(localStorage.getItem("school_users")) || [];
+      let allComments =
+        JSON.parse(localStorage.getItem("school_comments")) || [];
+
+      // Загружаем всех зарегистрированных пользователей при старте
+      function loadRegisteredUsers() {
+        allUsers.forEach((user) => {
+          // Проверяем, нет ли уже такой карточки в HTML
+          const cards = document.querySelectorAll(".student-card h3");
+          let exists = false;
+          cards.forEach((h3) => {
+            if (
+              h3.innerText.toLowerCase().includes(user.lastName.toLowerCase())
+            )
+              exists = true;
+          });
+
+          if (!exists) {
+            renderNewCard(user);
+          }
+        });
+      }
+
+      // Вызываем загрузку сразу
+      window.addEventListener("DOMContentLoaded", () => {
+        loadRegisteredUsers();
+        document.querySelectorAll(".card-btn").forEach(attachBtnEvent);
+        updateCommentBadges(); // Обновляем кружки при загрузке
+      });
+
+      const authOverlay = document.getElementById("authOverlay");
+      const loginBtn = document.getElementById("loginBtn");
+
+      loginBtn.addEventListener("click", () => {
+        const userData = {
+          class: document.getElementById("authClass").value,
+          letter: document.getElementById("authLetter").value,
+          lastName: document.getElementById("authLastName").value,
+          firstName: document.getElementById("authFirstName").value,
+          pass: document.getElementById("authPass").value,
+        };
+
+        if (!userData.lastName || !userData.firstName || !userData.pass)
+          return alert("Заполните все поля");
+
+        // Проверяем, существует ли пользователь
+        let user = allUsers.find(
+          (u) =>
+            u.lastName === userData.lastName &&
+            u.firstName === userData.firstName,
+        );
+
+        if (user) {
+          if (user.pass !== userData.pass)
+            return alert("Неверный пароль для этого имени!");
+          currentUser = user;
+        } else {
+          // Регистрация нового
+          currentUser = userData;
+          allUsers.push(userData);
+          localStorage.setItem("school_users", JSON.stringify(allUsers));
+
+          // Проверяем, есть ли уже карточка на странице
+          checkAndCreateCard(userData);
+        }
+
+        authOverlay.style.display = "none";
+        alert(`Привет, ${currentUser.firstName}!`);
+      });
+
+      const guestBtn = document.getElementById("guestBtn");
+      guestBtn.addEventListener("click", () => {
+        const userData = {
+          class: document.getElementById("authClass").value,
+          letter: document.getElementById("authLetter").value,
+          lastName: document.getElementById("authLastName").value,
+          firstName: document.getElementById("authFirstName").value,
+          isGuest: true
+        };
+
+        if (!userData.lastName || !userData.firstName) {
+          return alert("Для входа как гость введите Имя и Фамилию");
+        }
+
+        currentUser = userData;
+        authOverlay.style.display = "none";
+        alert(`Вы вошли как гость: ${currentUser.firstName}. Просмотр разрешен.`);
+      });
+
+      function renderNewCard(user) {
+        const container = document.getElementById("students");
+        const newCard = document.createElement("div");
+        newCard.className = "card student-card";
+        newCard.innerHTML = `
+          <div class="image-wrapper"><img src="teacher-placeholder.jpg" alt="Ученик"></div>
+          <div class="card-info">
+            <h3>${user.lastName} ${user.firstName}</h3>
+            <p>Ученик ${user.class}-${user.letter}</p>
+            <button class="card-btn">Инфо</button>
+            <div class="comment-btn-wrapper">
+              <button class="card-btn" style="background: #5f79ff;">Комментарии</button>
+              <div class="comment-count-badge">0</div>
+            </div>
+          </div>
+        `;
+        container.appendChild(newCard);
+        attachBtnEvent(newCard.querySelector(".card-btn"));
+
+        // Запускаем анимацию появления для новой карточки
+        newCard.style.opacity = "1";
+        newCard.style.transform = "translateY(0)";
+        updateCommentBadges();
+      }
+
       const observerOptions = { threshold: 0.1 };
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -787,7 +1099,6 @@ give you a positive life</p>
         observer.observe(card);
       });
 
-      // Логика открытия фото на весь экран
       const modal = document.getElementById("imageModal");
       const fullImg = document.getElementById("fullImage");
 
@@ -795,14 +1106,15 @@ give you a positive life</p>
         img.addEventListener("click", () => {
           modal.style.display = "flex";
           fullImg.src = img.src;
+          document.body.classList.add("no-scroll");
         });
       });
 
       modal.addEventListener("click", () => {
         modal.style.display = "none";
+        document.body.classList.remove("no-scroll");
       });
 
-      // Логика открытия информации
       const infoModal = document.getElementById("infoModal");
       const infoName = document.getElementById("infoName");
       const infoMainImg = document.getElementById("infoMainImg");
@@ -810,12 +1122,17 @@ give you a positive life</p>
       const infoCharName = document.getElementById("infoCharName");
       const infoMovie = document.getElementById("infoMovie");
       const charCardWrap = document.getElementById("charCardWrap");
+      const commentsContainer = document.getElementById("commentsContainer");
+      const personalPhotosSection = document.getElementById(
+        "personalPhotosSection",
+      );
 
-      document.querySelectorAll(".card-btn").forEach((btn) => {
+      function attachBtnEvent(btn) {
         btn.addEventListener("click", (e) => {
-          e.stopPropagation(); // Чтобы не срабатывало открытие картинки, если нажать на кнопку
+          e.stopPropagation();
           const card = btn.closest(".card");
           const name = card.querySelector("h3").innerText;
+
           const description = card.querySelector("p").innerText;
           const mainSrc = card.querySelector("img").src;
           const extraSrc = card.getAttribute("data-extra");
@@ -823,6 +1140,9 @@ give you a positive life</p>
           const movieTitle = card.getAttribute("data-movie") || "Movie Title";
 
           infoName.innerText = name;
+          if (document.getElementById("infoTitleName")) {
+            document.getElementById("infoTitleName").innerText = name;
+          }
           infoCharName.innerText = charName;
           infoMovie.innerText = movieTitle;
           infoMainImg.src = mainSrc;
@@ -835,14 +1155,179 @@ give you a positive life</p>
           }
 
           infoModal.style.display = "flex";
+          document.body.classList.add("no-scroll");
+          loadComments(name);
+
+          // Показываем раздел загрузки фото, только если это карточка текущего пользователя
+          if (
+            currentUser &&
+            !currentUser.isGuest &&
+            name.toLowerCase().includes(currentUser.lastName.toLowerCase())
+          ) {
+            personalPhotosSection.style.display = "block";
+            loadUserPhotos();
+          } else {
+            personalPhotosSection.style.display = "none";
+          }
         });
+      }
+
+      // Функция обновления оранжевых кружков (как в WhatsApp)
+      function updateCommentBadges() {
+        const latestComments = JSON.parse(localStorage.getItem("school_comments")) || [];
+        const cards = document.querySelectorAll(".student-card");
+
+        cards.forEach((card) => {
+          const name = card.querySelector("h3").innerText;
+          const count = latestComments.filter((c) => c.target === name).length;
+          
+          // Ищем кнопку комментариев в этой карточке
+          const buttons = card.querySelectorAll(".card-btn");
+          let commBtn = null;
+          buttons.forEach(b => { if(b.innerText.includes("Комментарии")) commBtn = b; });
+
+          if (commBtn) {
+            // Оборачиваем кнопку в wrapper, если её там еще нет
+            if (!commBtn.parentElement.classList.contains("comment-btn-wrapper")) {
+              const wrapper = document.createElement("div");
+              wrapper.className = "comment-btn-wrapper";
+              commBtn.parentNode.insertBefore(wrapper, commBtn);
+              wrapper.appendChild(commBtn);
+              
+              const badge = document.createElement("div");
+              badge.className = "comment-count-badge";
+              wrapper.appendChild(badge);
+            }
+
+            const badge = commBtn.parentElement.querySelector(".comment-count-badge");
+            if (count > 0) {
+              badge.innerText = count;
+              badge.style.display = "flex";
+            } else {
+              badge.style.display = "none";
+            }
+          }
+        });
+      }
+
+      // --- ЛОГИКА КОММЕНТАРИЕВ ---
+      function loadComments(targetName) {
+        commentsContainer.innerHTML = "";
+        // Всегда берем свежие данные из localStorage для синхронизации
+        const latestComments =
+          JSON.parse(localStorage.getItem("school_comments")) || [];
+        const filtered = latestComments.filter((c) => c.target === targetName);
+        filtered.forEach((c) => {
+          const div = document.createElement("div");
+          div.className = "comment-item";
+          div.innerHTML = `<div class="comment-author">Анонимно</div><div>${c.text}</div>`;
+          commentsContainer.appendChild(div);
+        });
+      }
+
+      document
+        .getElementById("sendCommentBtn")
+        .addEventListener("click", () => {
+          const text = document.getElementById("newCommentInput").value;
+          const targetName = document.getElementById("infoName").innerText;
+          if (!text) return;
+
+          const newComment = {
+            target: targetName,
+            text: text,
+            authorReal: `${currentUser.lastName} ${currentUser.firstName}`, // Видит только дев
+            date: new Date().toLocaleString(),
+          };
+
+          allComments.push(newComment);
+          localStorage.setItem("school_comments", JSON.stringify(allComments));
+          document.getElementById("newCommentInput").value = "";
+          loadComments(targetName);
+          updateCommentBadges(); // Сразу обновляем кружок после отправки
+        });
+
+      // --- ЛОГИКА ФОТО ---
+      function loadUserPhotos() {
+        const grid = document.getElementById("userPhotosGrid");
+        grid.innerHTML = "";
+        const photos =
+          JSON.parse(localStorage.getItem(`photos_${currentUser.lastName}`)) ||
+          [];
+        photos.forEach((src) => {
+          const img = document.createElement("img");
+          img.src = src;
+          grid.appendChild(img);
+        });
+      }
+
+      document
+        .getElementById("photoUploadInput")
+        .addEventListener("change", function (e) {
+          const files = e.target.files;
+          if (files.length > 50) return alert("Максимум 50 фото");
+
+          let photos =
+            JSON.parse(
+              localStorage.getItem(`photos_${currentUser.lastName}`),
+            ) || [];
+
+          Array.from(files).forEach((file) => {
+            const reader = new FileReader();
+            reader.onload = (event) => {
+              if (photos.length < 50) {
+                photos.push(event.target.result);
+                localStorage.setItem(
+                  `photos_${currentUser.lastName}`,
+                  JSON.stringify(photos),
+                );
+                loadUserPhotos();
+              }
+            };
+            reader.readAsDataURL(file);
+          });
+        });
+
+      // --- СЕКРЕТ АДМИНА ---
+      let clickCount = 0;
+      document.querySelector(".footer").addEventListener("click", () => {
+        clickCount++;
+        if (clickCount === 5) {
+          const pass = prompt("Введите пароль разработчика:");
+          if (pass === "ADMIN123") {
+            // Твой секретный пароль
+            document.getElementById("adminPanel").style.display = "block";
+            updateAdminPanel();
+          }
+          clickCount = 0;
+        }
       });
 
-      infoModal.addEventListener("click", () => {
-        infoModal.style.display = "none";
-      });
+      function updateAdminPanel() {
+        const userList = document.getElementById("adminUserList");
+        userList.innerHTML = allUsers
+          .map((u) => `<li>👤 ${u.lastName} ${u.firstName} | 🔑 ${u.pass}</li>`)
+          .join("");
 
-      // Логика визуализации клика
+        const commList = document.getElementById("adminCommentList");
+        commList.innerHTML = allComments
+          .map((c) => `<li>🆔 ${c.authorReal}: "${c.text}"</li>`)
+          .join("");
+      }
+
+      // Закрытие модального окна при клике на темный фон
+      infoModal.addEventListener("click", (e) => {
+        if (e.target === infoModal) {
+          infoModal.style.display = "none";
+          document.body.classList.remove("no-scroll");
+        }
+      });
+      // Чтобы окно не закрывалось при клике внутри самой карточки
+      document
+        .querySelector(".modal-info-content")
+        .addEventListener("click", (e) => {
+          e.stopPropagation();
+        });
+
       document.addEventListener("click", (e) => {
         const indicator = document.createElement("div");
         indicator.className = "click-indicator";

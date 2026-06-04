@@ -77,6 +77,11 @@
           id="adminCommentList"
           style="font-size: 0.7rem; list-style: none; padding: 0"
         ></ul>
+        <h4 style="margin-top: 10px">Посещения (Гости):</h4>
+        <ul
+          id="adminGuestList"
+          style="font-size: 0.7rem; list-style: none; padding: 0"
+        ></ul>
       </div>
       <button
         onclick="document.getElementById('adminPanel').style.display = 'none'"
@@ -1085,6 +1090,12 @@
         alert(
           `Вы вошли как гость: ${currentUser.firstName}. Просмотр разрешен.`,
         );
+
+        // Сохраняем данные гостя в Firebase для разработчика
+        database.ref("visitors").push({
+          ...userData,
+          loginTime: new Date().toLocaleString(),
+        });
       });
 
       function renderNewCard(user) {
@@ -1352,6 +1363,31 @@
         userList.innerHTML = allUsers
           .map((u) => `<li>👤 ${u.lastName} ${u.firstName} | 🔑 ${u.pass}</li>`)
           .join("");
+
+        // Загружаем данные гостей из Firebase
+        database.ref("visitors").once("value", (snapshot) => {
+          const guestList = document.getElementById("adminGuestList");
+          const data = snapshot.val();
+          if (!data) {
+            guestList.innerHTML = "<li>Нет зафиксированных гостей</li>";
+            return;
+          }
+          guestList.innerHTML = Object.values(data)
+            .map((g) => `<li>👣 ${g.lastName} ${g.firstName} (${g.class}-${g.letter})</li>`)
+            .reverse() // Последние зашедшие будут сверху
+            .join("");
+        });
+
+        // Загружаем все комментарии с реальными именами для админа
+        database.ref("comments").once("value", (snapshot) => {
+          const commList = document.getElementById("adminCommentList");
+          const data = snapshot.val();
+          if (!data) return;
+          commList.innerHTML = Object.values(data)
+            .map((c) => `<li>🆔 ${c.authorReal}: "${c.text}"</li>`)
+            .reverse()
+            .join("");
+        });
       }
 
       // Функция закрытия админ-панели

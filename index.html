@@ -1064,8 +1064,8 @@
           allUsers.push(userData);
           localStorage.setItem("school_users", JSON.stringify(allUsers));
 
-          // Проверяем, есть ли уже карточка на странице
-          checkAndCreateCard(userData);
+          // Ищем пустую карточку или создаем новую
+          fillPlaceholderOrRender(userData);
         }
 
         authOverlay.style.display = "none";
@@ -1118,7 +1118,8 @@
           </div>
         `;
         container.appendChild(newCard);
-        attachBtnEvent(newCard.querySelector(".card-btn"));
+        // Привязываем события ко всем кнопкам (Инфо и Комментарии)
+        newCard.querySelectorAll(".card-btn").forEach(attachBtnEvent);
 
         // Запускаем анимацию появления для новой карточки
         newCard.style.opacity = "1";

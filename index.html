@@ -991,11 +991,15 @@
       const database = firebase.database();
       // console.log("Firebase подключен!");
 
+      // Глобальный слушатель комментариев для обновления бейджей (кружков) в реальном времени
+      database.ref("comments").on("value", (snapshot) => {
+        const data = snapshot.val();
+        updateCommentBadges(data ? Object.values(data) : []);
+      });
+
       // --- ЛОГИКА АВТОРИЗАЦИИ И ДАННЫХ ---
       let currentUser = null;
       let allUsers = JSON.parse(localStorage.getItem("school_users")) || [];
-      let allComments =
-        JSON.parse(localStorage.getItem("school_comments")) || [];
 
       // Загружаем всех зарегистрированных пользователей при старте
       function loadRegisteredUsers() {
@@ -1020,7 +1024,6 @@
       window.addEventListener("DOMContentLoaded", () => {
         loadRegisteredUsers();
         document.querySelectorAll(".card-btn").forEach(attachBtnEvent);
-        updateCommentBadges(); // Обновляем кружки при загрузке
       });
 
       const authOverlay = document.getElementById("authOverlay");
@@ -1106,7 +1109,6 @@
         // Запускаем анимацию появления для новой карточки
         newCard.style.opacity = "1";
         newCard.style.transform = "translateY(0)";
-        updateCommentBadges();
       }
 
       const observerOptions = { threshold: 0.1 };
@@ -1200,9 +1202,7 @@
       }
 
       // Функция обновления оранжевых кружков (как в WhatsApp)
-      function updateCommentBadges() {
-        const latestComments =
-          JSON.parse(localStorage.getItem("school_comments")) || [];
+      function updateCommentBadges(latestComments) {
         const cards = document.querySelectorAll(".student-card");
 
         cards.forEach((card) => {
@@ -1261,7 +1261,6 @@
             div.innerHTML = `<div class="comment-author">Анонимно</div><div>${c.text}</div>`;
             commentsContainer.appendChild(div);
           });
-          updateCommentBadges(); // Обновляем кружки WhatsApp
         });
       }
 
@@ -1341,7 +1340,7 @@
         if (clickCount === 5) {
           const pass = prompt("Введите пароль разработчика:");
           if (pass === "ADMIN123") {
-            document.getElementById("adminPanel").style.display = "block";
+            document.getElementById("adminPanel").classList.add("visible");
             updateAdminPanel();
           }
           clickCount = 0;
@@ -1353,11 +1352,11 @@
         userList.innerHTML = allUsers
           .map((u) => `<li>👤 ${u.lastName} ${u.firstName} | 🔑 ${u.pass}</li>`)
           .join("");
+      }
 
-        const commList = document.getElementById("adminCommentList");
-        commList.innerHTML = allComments
-          .map((c) => `<li>🆔 ${c.authorReal}: "${c.text}"</li>`)
-          .join("");
+      // Функция закрытия админ-панели
+      function closeAdminPanel() {
+        document.getElementById("adminPanel").classList.remove("visible");
       }
 
       // Закрытие модального окна при клике на темный фон

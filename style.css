@@ -425,7 +425,7 @@ body {
 
 /* Админ панель */
 .admin-panel {
-  display: none !important;
+  display: none;
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -437,6 +437,11 @@ body {
   max-width: 400px;
   max-height: 400px;
   overflow-y: auto;
+}
+
+/* Показываем панель только когда добавлен этот класс */
+.admin-panel.visible {
+  display: block !important;
 }
 
 #infoCharName {

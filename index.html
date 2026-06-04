@@ -13,7 +13,7 @@
     <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
   </head>
-  <body>
+  <body class="no-scroll">
     <!-- Окно авторизации -->
     <div id="authOverlay" class="auth-overlay">
       <div class="auth-form">
@@ -899,6 +899,7 @@
     <!-- Модальное окно для информации -->
     <div id="infoModal" class="modal">
       <div class="modal-info-content">
+        <span class="close-info-modal" id="closeInfoBtn">&times;</span>
         <div class="modal-images-row">
           <div class="info-card-wrap">
             <img id="infoMainImg" class="modal-info-img" src="" alt="Ученик" />
@@ -943,7 +944,7 @@
               type="text"
               id="newCommentInput"
               placeholder="Написать анонимно..."
-              style="flex: 1; padding: 8px; border-radius: 10px; border: none"
+            style="flex: 1; padding: 8px; border-radius: 10px; border: none; font-size: 16px;"
             />
             <button
               id="sendCommentBtn"
@@ -1068,6 +1069,7 @@
         }
 
         authOverlay.style.display = "none";
+        document.body.classList.remove("no-scroll");
         alert(`Привет, ${currentUser.firstName}!`);
       });
 
@@ -1087,6 +1089,7 @@
 
         currentUser = userData;
         authOverlay.style.display = "none";
+        document.body.classList.remove("no-scroll");
         alert(
           `Вы вошли как гость: ${currentUser.firstName}. Просмотр разрешен.`,
         );
@@ -1365,7 +1368,7 @@
           .join("");
 
         // Загружаем данные гостей из Firebase
-        database.ref("visitors").once("value", (snapshot) => {
+        database.ref("visitors").on("value", (snapshot) => {
           const guestList = document.getElementById("adminGuestList");
           const data = snapshot.val();
           if (!data) {
@@ -1373,18 +1376,29 @@
             return;
           }
           guestList.innerHTML = Object.values(data)
-            .map((g) => `<li>👣 ${g.lastName} ${g.firstName} (${g.class}-${g.letter})</li>`)
+            .map(
+              (g) =>
+                `<li>👣 ${g.lastName} ${g.firstName} (${g.class}-${g.letter}) <br><small style="color: #ccc">${g.loginTime || ""}</small></li>`,
+            )
             .reverse() // Последние зашедшие будут сверху
             .join("");
         });
 
         // Загружаем все комментарии с реальными именами для админа
-        database.ref("comments").once("value", (snapshot) => {
+        database.ref("comments").on("value", (snapshot) => {
           const commList = document.getElementById("adminCommentList");
           const data = snapshot.val();
           if (!data) return;
           commList.innerHTML = Object.values(data)
-            .map((c) => `<li>🆔 ${c.authorReal}: "${c.text}"</li>`)
+            .map(
+              (c) =>
+                `<li style="margin-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 4px;">
+                  <strong>🆔 ${c.authorReal || "Аноним"}</strong><br>
+                  <span style="color: #ffd700">Кому: ${c.target}</span><br>
+                  "${c.text}"<br>
+                  <small style="color: #ccc">${c.date || ""}</small>
+                </li>`,
+            )
             .reverse()
             .join("");
         });
@@ -1394,6 +1408,12 @@
       function closeAdminPanel() {
         document.getElementById("adminPanel").classList.remove("visible");
       }
+
+      // Закрытие модального окна Инфо по крестику
+      document.getElementById("closeInfoBtn").addEventListener("click", () => {
+        infoModal.style.display = "none";
+        document.body.classList.remove("no-scroll");
+      });
 
       // Закрытие модального окна при клике на темный фон
       infoModal.addEventListener("click", (e) => {

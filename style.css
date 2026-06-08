@@ -505,3 +505,51 @@ body {
     border-width: 1px;
   }
 }
+.floating-profile-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  backdrop-filter: blur(10px);
+  color: white;
+  font-size: 26px;
+  cursor: grab;
+  z-index: 99999;
+}
+
+.profile-page {
+  position: fixed;
+  inset: 0;
+  background: #111827;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 99998;
+}
+
+.profile-content {
+  width: 90%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.profile-content input,
+.profile-content textarea {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+}
+
+.profile-content textarea {
+  min-height: 120px;
+}
+
+.profile-page.active {
+  display: flex;
+}
